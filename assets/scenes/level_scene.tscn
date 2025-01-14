@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://yffvejvx30qw"]
+
+[ext_resource type="Script" path="res://assets/scripts/level_scene.gd" id="1_wfhp6"]
+[ext_resource type="PackedScene" uid="uid://bgb4qw2nq8fvv" path="res://assets/scenes/level_camera.tscn" id="2_tpkqr"]
+
+[node name="LevelScene" type="Node2D"]
+script = ExtResource("1_wfhp6")
+
+[node name="LevelCamera" parent="." instance=ExtResource("2_tpkqr")]

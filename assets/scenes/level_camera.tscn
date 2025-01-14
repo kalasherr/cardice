@@ -1,0 +1,76 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgb4qw2nq8fvv"]
+
+[ext_resource type="Script" path="res://assets/scripts/level_camera.gd" id="1_2llgl"]
+
+[node name="LevelCamera" type="Camera2D"]
+script = ExtResource("1_2llgl")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RB" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="RU" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+
+[node name="LB" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+
+[node name="LU" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="MidB" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MidB"]
+layout_mode = 0
+offset_left = -284.0
+offset_top = -159.0
+offset_right = 284.0
+alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/MidB/HBoxContainer"]
+custom_minimum_size = Vector2(120, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button2" type="Button" parent="CanvasLayer/MidB/HBoxContainer"]
+custom_minimum_size = Vector2(120, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button3" type="Button" parent="CanvasLayer/MidB/HBoxContainer"]
+custom_minimum_size = Vector2(120, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button4" type="Button" parent="CanvasLayer/MidB/HBoxContainer"]
+custom_minimum_size = Vector2(120, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
