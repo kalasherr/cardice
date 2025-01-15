@@ -7,3 +7,7 @@
 script = ExtResource("1_wfhp6")
 
 [node name="LevelCamera" parent="." instance=ExtResource("2_tpkqr")]
+
+[node name="Elements" type="Node2D" parent="."]
+
+[node name="Buffer" type="Node2D" parent="."]

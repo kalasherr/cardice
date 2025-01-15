@@ -76,4 +76,12 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
+[node name="Confirm" type="Button" parent="CanvasLayer/MidB"]
+layout_mode = 0
+offset_left = -104.0
+offset_top = -45.0
+offset_right = 104.0
+offset_bottom = -18.0
+
 [connection signal="pressed" from="CanvasLayer/MidB/HBoxContainer/Saw" to="." method="_on_saw_pressed"]
+[connection signal="pressed" from="CanvasLayer/MidB/Confirm" to="." method="_on_confirm_pressed"]

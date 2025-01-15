@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://ou4wlrm140t8"
+path="res://.godot/imported/button.png-c23196a3026f7c6520170b11659d9d99.res"
+
+[deps]
+
+source_file="res://assets/sprites/elements/dice/button.png"
+dest_files=["res://.godot/imported/button.png-c23196a3026f7c6520170b11659d9d99.res"]
+
+[params]
+
+create_from=0
+threshold=0.5
