@@ -1,7 +1,5 @@
 extends BaseElement
-
-func _process(delta):
-	pass
+class_name Dice
 
 func variables_change():
 	value_range = [1,6]
@@ -41,4 +39,42 @@ func saw():
 	board.get_node("Elements").get_children()[len(board.get_node("Elements").get_children())-1].init()
 	print(values[1])
 	board.chosen_elements = []
+	get_parent().get_parent().update_energy(1)
 	queue_free()
+
+func merge(element):
+	var board = get_parent().get_parent()
+	if element is Dice:
+		self.reparent(board.get_node("Buffer"))
+		element.reparent(board.get_node("Buffer"))
+		board.rebalance()
+		board.add_element("domino",false,value,element.value)
+		get_parent().get_parent().update_energy(1)
+		element.queue_free()
+		self.queue_free()
+	if element is Domino:
+		var bigger_value
+		self.reparent(board.get_node("Buffer"))
+		element.reparent(board.get_node("Buffer"))
+		board.rebalance()
+		if element.value1 < element.value2:
+			element.value1 = int(element.value1 + value)%7
+		else:
+			element.value2 = int(element.value2 + value)%7
+		board.add_element("domino",false,element.value1,element.value2)
+		get_parent().get_parent().update_energy(1)
+		element.queue_free()
+		self.queue_free()
+		
+
+func mergeable(element):
+	if element is Dice or element is Domino:
+		return true
+	return false
+
+func count_result():
+	var counter = 1
+	for element in get_parent().get_parent().get_node("Elements").get_children():
+		if element is Dice and element != self:
+			counter += 0.5
+	return round(value * counter)

@@ -11,9 +11,18 @@ config_version=5
 [application]
 
 config/name="cardice"
-run/main_scene="res://assets/scenes/level_scene.tscn"
+run/main_scene="res://assets/scenes/Menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://assets/scripts/global.gd"
+
+[display]
+
+window/size/viewport_height=800
+window/stretch/mode="viewport"
 
 [rendering]
 

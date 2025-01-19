@@ -1,5 +1,8 @@
 extends Camera2D
-
+@onready var button_container = $CanvasLayer/MidB/HBoxContainer
+@onready var progress_bar = $CanvasLayer/MidR/ProgressBar
+@onready var energy_bar = $CanvasLayer/MidB/ProgressBar
+@onready var new_element = $CanvasLayer/MidB/NewElement
 func _ready():
 	pass
 
@@ -21,3 +24,19 @@ func confirm_button():
 
 func _on_confirm_pressed():
 	retranslate("confirm")
+
+
+func _on_merge_pressed():
+	retranslate("merge")
+
+
+func _on_morph_pressed():
+	retranslate("morph")
+
+
+func _on_new_pressed():
+	retranslate("add")
+
+
+func _on_new_element_pressed():
+	retranslate("end")

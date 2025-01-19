@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfr3s3psfe20l"]
+
+[ext_resource type="Texture2D" uid="uid://dkjxo3l4rfmpc" path="res://assets/sprites/buttons/tooltip.png" id="1_jg6jo"]
+
+[node name="Tooltip" type="Node2D"]
+texture_filter = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jg6jo")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -103.0
+offset_top = -57.0
+offset_right = 102.0
+offset_bottom = 56.0
+horizontal_alignment = 1
+vertical_alignment = 1

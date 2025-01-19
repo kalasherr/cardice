@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://c2qqc5tmd8ssk"
+path="res://.godot/imported/button.png-f7341e370294a16e62d53ad439124d49.res"
+
+[deps]
+
+source_file="res://assets/sprites/elements/domino/button.png"
+dest_files=["res://.godot/imported/button.png-f7341e370294a16e62d53ad439124d49.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

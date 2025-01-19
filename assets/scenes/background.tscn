@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceojpyrbq316x"]
+
+[ext_resource type="Texture2D" uid="uid://l0cdr7jd61b6" path="res://assets/sprites/buttons/background.png" id="1_f4e43"]
+[ext_resource type="Script" path="res://assets/scripts/background.gd" id="2_heupo"]
+
+[node name="Background" type="Sprite2D"]
+z_index = -10
+texture = ExtResource("1_f4e43")
+script = ExtResource("2_heupo")

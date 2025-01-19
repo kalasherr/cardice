@@ -1,8 +1,33 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgb4qw2nq8fvv"]
+[gd_scene load_steps=20 format=3 uid="uid://bgb4qw2nq8fvv"]
 
 [ext_resource type="Script" path="res://assets/scripts/level_camera.gd" id="1_2llgl"]
+[ext_resource type="Texture2D" uid="uid://cffeil3ja3mol" path="res://assets/sprites/buttons/split.png" id="2_fsd6k"]
+[ext_resource type="Texture2D" uid="uid://c1kbcwwg15ay7" path="res://assets/sprites/buttons/split_focused.png" id="3_hknet"]
+[ext_resource type="Texture2D" uid="uid://ct0vg3krhlpw1" path="res://assets/sprites/buttons/merge.png" id="4_c03ad"]
+[ext_resource type="Texture2D" uid="uid://dtgn8fxjelapk" path="res://assets/sprites/buttons/morph.png" id="4_nms2f"]
+[ext_resource type="Texture2D" uid="uid://301vea3pvj5c" path="res://assets/sprites/buttons/merge_focused.png" id="5_7sgmi"]
+[ext_resource type="Texture2D" uid="uid://bwlvol48l4nwh" path="res://assets/sprites/buttons/morph_focused.png" id="5_edgen"]
+[ext_resource type="Texture2D" uid="uid://bw7d2jqngxwfd" path="res://assets/sprites/buttons/add.png" id="6_o8ft2"]
+[ext_resource type="Texture2D" uid="uid://cce8ljwsrtb0t" path="res://assets/sprites/buttons/add_focused.png" id="7_yp21t"]
+[ext_resource type="Texture2D" uid="uid://crnmkf0jchv8v" path="res://assets/sprites/buttons/confirm.png" id="10_7p6ly"]
+[ext_resource type="Texture2D" uid="uid://dhuspypkllouf" path="res://assets/sprites/buttons/energy_bar.png" id="10_8dvsb"]
+[ext_resource type="Texture2D" uid="uid://cfhf222avw85u" path="res://assets/sprites/buttons/energy_bar_inner_part.png" id="11_75m55"]
+[ext_resource type="Texture2D" uid="uid://rdcjpeb8v2so" path="res://assets/sprites/buttons/progress.png" id="13_3osix"]
+[ext_resource type="Texture2D" uid="uid://lgda781rjcf5" path="res://assets/sprites/buttons/start.png" id="13_huan7"]
+[ext_resource type="Texture2D" uid="uid://bepcv738hhno5" path="res://assets/sprites/buttons/add_element.png" id="14_7s7yc"]
+[ext_resource type="Texture2D" uid="uid://dfxfm5kb1ovfr" path="res://assets/sprites/buttons/start_pressed.png" id="14_x30m4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dmpip"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_0eojl"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_o3joc"]
+font_size = 80
 
 [node name="LevelCamera" type="Camera2D"]
+texture_filter = 3
 script = ExtResource("1_2llgl")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -24,6 +49,20 @@ anchor_left = 1.0
 anchor_right = 1.0
 grow_horizontal = 0
 
+[node name="Label2" type="Label" parent="CanvasLayer/RU"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -440.0
+offset_right = -280.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Rounds left: 3"
+label_settings = SubResource("LabelSettings_dmpip")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="LB" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 2
@@ -35,7 +74,17 @@ grow_vertical = 0
 layout_mode = 3
 anchors_preset = 0
 
+[node name="Label" type="Label" parent="CanvasLayer/LU"]
+layout_mode = 0
+offset_left = 237.0
+offset_top = 1.0
+offset_right = 344.0
+offset_bottom = 46.0
+text = "Level 1"
+label_settings = SubResource("LabelSettings_0eojl")
+
 [node name="MidB" type="Control" parent="CanvasLayer"]
+texture_filter = 3
 layout_mode = 3
 anchors_preset = 7
 anchor_left = 0.5
@@ -52,36 +101,158 @@ offset_top = -159.0
 offset_right = 284.0
 alignment = 1
 
-[node name="Saw" type="Button" parent="CanvasLayer/MidB/HBoxContainer"]
+[node name="Saw" type="TextureButton" parent="CanvasLayer/MidB/HBoxContainer"]
 custom_minimum_size = Vector2(120, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("2_fsd6k")
+texture_pressed = ExtResource("3_hknet")
+texture_disabled = ExtResource("3_hknet")
+texture_focused = ExtResource("3_hknet")
 
-[node name="Button2" type="Button" parent="CanvasLayer/MidB/HBoxContainer"]
+[node name="Merge" type="TextureButton" parent="CanvasLayer/MidB/HBoxContainer"]
 custom_minimum_size = Vector2(120, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("4_c03ad")
+texture_pressed = ExtResource("5_7sgmi")
+texture_disabled = ExtResource("5_7sgmi")
+texture_focused = ExtResource("5_7sgmi")
 
-[node name="Button3" type="Button" parent="CanvasLayer/MidB/HBoxContainer"]
+[node name="Morph" type="TextureButton" parent="CanvasLayer/MidB/HBoxContainer"]
 custom_minimum_size = Vector2(120, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture_normal = ExtResource("4_nms2f")
+texture_pressed = ExtResource("5_edgen")
+texture_disabled = ExtResource("5_edgen")
+texture_focused = ExtResource("5_edgen")
 
-[node name="Button4" type="Button" parent="CanvasLayer/MidB/HBoxContainer"]
+[node name="New" type="TextureButton" parent="CanvasLayer/MidB/HBoxContainer"]
 custom_minimum_size = Vector2(120, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+focus_mode = 0
+texture_normal = ExtResource("6_o8ft2")
+texture_pressed = ExtResource("7_yp21t")
+texture_disabled = ExtResource("7_yp21t")
 
-[node name="Confirm" type="Button" parent="CanvasLayer/MidB"]
+[node name="Confirm" type="TextureButton" parent="CanvasLayer/MidB"]
 layout_mode = 0
 offset_left = -104.0
 offset_top = -45.0
 offset_right = 104.0
-offset_bottom = -18.0
+offset_bottom = -14.0
+texture_normal = ExtResource("10_7p6ly")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="CanvasLayer/MidB"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -209.0
+offset_top = -140.0
+offset_right = 209.0
+offset_bottom = -113.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 30.0
+value = 30.0
+texture_over = ExtResource("10_8dvsb")
+texture_progress = ExtResource("11_75m55")
+
+[node name="Label" type="Label" parent="CanvasLayer/MidB/ProgressBar"]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 32.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NewElement" type="TextureButton" parent="CanvasLayer/MidB"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 254.0
+offset_top = -110.0
+offset_right = 314.0
+offset_bottom = -76.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("13_huan7")
+texture_pressed = ExtResource("14_x30m4")
+texture_disabled = ExtResource("14_x30m4")
+
+[node name="MidR" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ProgressBar" type="Sprite2D" parent="CanvasLayer/MidR"]
+z_index = 2
+position = Vector2(-50, -8)
+texture = ExtResource("13_3osix")
+
+[node name="Label" type="Label" parent="CanvasLayer/MidR/ProgressBar"]
+offset_left = -19.0
+offset_top = -279.0
+offset_right = 31.0
+offset_bottom = 281.0
+text = "1000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MidT" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/MidT"]
+modulate = Color(0.649355, 1, 0.487142, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -197.0
+offset_top = -111.0
+offset_right = 197.0
+offset_bottom = -1.0
+grow_horizontal = 2
+text = "V i c t o r y"
+label_settings = SubResource("LabelSettings_o3joc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MidL" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="NewElement" type="Sprite2D" parent="CanvasLayer/MidL"]
+position = Vector2(50, -1)
+texture = ExtResource("14_7s7yc")
 
 [connection signal="pressed" from="CanvasLayer/MidB/HBoxContainer/Saw" to="." method="_on_saw_pressed"]
+[connection signal="pressed" from="CanvasLayer/MidB/HBoxContainer/Merge" to="." method="_on_merge_pressed"]
+[connection signal="pressed" from="CanvasLayer/MidB/HBoxContainer/Morph" to="." method="_on_morph_pressed"]
+[connection signal="pressed" from="CanvasLayer/MidB/HBoxContainer/New" to="." method="_on_new_pressed"]
 [connection signal="pressed" from="CanvasLayer/MidB/Confirm" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="CanvasLayer/MidB/NewElement" to="." method="_on_new_element_pressed"]

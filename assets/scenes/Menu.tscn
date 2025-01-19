@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgguf2wvvlsq7"]
+
+[ext_resource type="Texture2D" uid="uid://lgda781rjcf5" path="res://assets/sprites/buttons/start.png" id="1_djf3b"]
+[ext_resource type="PackedScene" uid="uid://ceojpyrbq316x" path="res://assets/scenes/background.tscn" id="1_t51vk"]
+[ext_resource type="Texture2D" uid="uid://dxakelfh4ecx6" path="res://assets/sprites/buttons/logo.png" id="2_r1uf7"]
+
+[node name="Menu" type="Node2D"]
+texture_filter = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_top = 186.0
+offset_right = 288.0
+offset_bottom = 340.0
+scale = Vector2(4, 4)
+
+[node name="Button" type="TextureButton" parent="CenterContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_djf3b")
+
+[node name="Background" parent="." instance=ExtResource("1_t51vk")]
+position = Vector2(576, 400)
+
+[node name="Logo" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(1371.9, 178.8)
+scale = Vector2(10, 10)
+texture = ExtResource("2_r1uf7")
+
+[connection signal="pressed" from="CenterContainer/Button" to="Background" method="_on_button_pressed"]
